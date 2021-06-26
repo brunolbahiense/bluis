@@ -27,7 +27,12 @@ export const Description = styled.h2`
   font-weight: 400;
 `
 
-export const Illustration = styled.img`
+export const Icon = styled.img`
+  margin: 1rem;
+  width: 40px;
+`
+export const Links = styled.div`
   margin-top: 3rem;
-  width: min(30rem, 100%);
+  background-color: rgba(238, 238, 238, 0.2);
+  border-radius: 12px;
 `
