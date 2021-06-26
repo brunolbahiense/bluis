@@ -18,12 +18,8 @@ export const Logo = styled.img`
   margin-bottom: 2rem;
 `
 
-export const Title = styled.h1`
-  font-size: 2.5rem;
-`
-
 export const Description = styled.h2`
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 400;
 `
 
@@ -33,6 +29,6 @@ export const Icon = styled.img`
 `
 export const Links = styled.div`
   margin-top: 3rem;
-  background-color: rgba(238, 238, 238, 0.2);
+  background-color: rgba(238, 238, 238, 0.1);
   border-radius: 12px;
 `
