@@ -5,7 +5,7 @@ export const Wrapper = styled.main`
   color: #fff;
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@ export const Wrapper = styled.main`
 `
 
 export const Logo = styled.img`
-  width: 50rem;
+  width: min(50rem, 100%);
   margin-bottom: 2rem;
 `
 
