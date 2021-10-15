@@ -1,5 +1,12 @@
-import Main from 'components/Main'
-
+import Main from './Main'
+import Portfolio from './Portfolio'
+import Contact from './Contact'
 export default function Home() {
-  return <Main />
+  return (
+    <>
+      <Main />
+      <Portfolio />
+      <Contact />
+    </>
+  )
 }
