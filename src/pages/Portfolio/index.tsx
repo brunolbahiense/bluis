@@ -19,7 +19,7 @@ export default function Portfolio() {
             </Link>
           </S.ClickTrips>
           <S.ClickToma>
-            <Link href="https://bluis.vercel.app">
+            <Link href="https://tomatracker.vercel.app/">
               <div>
                 <Button text="Tomatracker" />
               </div>
