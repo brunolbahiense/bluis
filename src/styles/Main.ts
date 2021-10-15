@@ -11,6 +11,11 @@ export const Wrapper = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 768px) {
+    border: none;
+    box-shadow: none;
+    width: 100%;
+  }
 `
 export const WrapperW = styled.main`
   background-color: #eee;
@@ -23,6 +28,11 @@ export const WrapperW = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 1080px) {
+    border: none;
+    box-shadow: none;
+    width: 100%;
+  }
 `
 export const Sites = styled.div`
   display: flex;
@@ -30,6 +40,10 @@ export const Sites = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  @media only screen and (max-width: 1080px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const Logo = styled.img`
@@ -52,9 +66,13 @@ export const ClickTrips = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   margin: 6em;
   border-radius: 10px;
+  @media only screen and (max-width: 1080px) {
+    width: 20em;
+    height: 20em;
+    margin: 3em;
+  }
 `
 export const ClickToma = styled.div`
   background-image: url(../img/tomatracker.png);
@@ -63,7 +81,11 @@ export const ClickToma = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   margin: 6em;
   border-radius: 10px;
+  @media only screen and (max-width: 1080px) {
+    width: 20em;
+    height: 20em;
+    margin: 3em;
+  }
 `
