@@ -47,7 +47,7 @@ export const Sites = styled.div`
 `
 
 export const Logo = styled.img`
-  width: min(50rem, 100%);
+  width: min(45rem, 100%);
   margin-bottom: 2rem;
 `
 

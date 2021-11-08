@@ -21,7 +21,6 @@ function App({ Component, pageProps }: AppProps) {
           content="Levando sua marca ao mundo digital!"
         />
         <meta property="og:image" content="/img/square.png" />
-
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://bluis.vercel.app/" />
         <meta property="twitter:title" content="Bluis" />
