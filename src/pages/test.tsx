@@ -1,8 +1,8 @@
-import Header from 'components/Header'
+import Button from 'components/Button'
 export default function Test() {
   return (
     <>
-      <Header title="Teste" />
+      <Button text="Teste" />
     </>
   )
 }
