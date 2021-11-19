@@ -1,7 +1,9 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import { ThemeProvider } from 'styled-components'
 
 import GlobalStyles from 'styles/global'
+import theme from 'styles/theme'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -30,8 +32,10 @@ function App({ Component, pageProps }: AppProps) {
         />
         <meta property="twitter:image" content="/img/square.png" />
       </Head>
-      <GlobalStyles />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }

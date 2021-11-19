@@ -1,39 +1,5 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.main`
-  background-color: #06092b;
-  color: #fff;
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  @media only screen and (max-width: 768px) {
-    border: none;
-    box-shadow: none;
-    width: 100%;
-  }
-`
-export const WrapperW = styled.main`
-  background-color: #eee;
-  color: #06092b;
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  @media only screen and (max-width: 1080px) {
-    border: none;
-    box-shadow: none;
-    width: 100%;
-  }
-`
 export const Sites = styled.div`
   display: flex;
   flex-direction: row;

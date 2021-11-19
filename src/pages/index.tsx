@@ -1,12 +1,10 @@
-import Main from './Main'
-import Portfolio from './Portfolio'
-import Contact from './Contact'
+import Layout from 'components/template/Layout'
+import Header from 'components/Header'
 export default function Home() {
   return (
     <>
-      <Main />
-      <Portfolio />
-      <Contact />
+      <Header />
+      <Layout />
     </>
   )
 }

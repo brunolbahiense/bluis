@@ -1,13 +1,11 @@
-import * as S from '../../styles/Main'
-import SocialMedia from 'components/Social'
+import Header from 'components/Header'
+import Contact from 'components/template/Contact'
 
-export default function Contact() {
+export default function ContactPage() {
   return (
     <>
-      <S.Wrapper>
-        <S.Description>Contact me</S.Description>
-        <SocialMedia />
-      </S.Wrapper>
+      <Header />
+      <Contact />
     </>
   )
 }
