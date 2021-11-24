@@ -4,7 +4,7 @@ import { WrapperProps } from '.'
 export const Wrapper = styled.main<WrapperProps>`
   color: ${(props) => props.theme.white};
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 3rem;
   text-align: center;
   display: flex;
@@ -18,7 +18,6 @@ export const Wrapper = styled.main<WrapperProps>`
     overflow: hidden;
     margin: unset;
     width: 100%;
-    height: 105%;
   }
 
   ${(props) =>

@@ -35,4 +35,5 @@ export const Content = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 100vh;
 `

@@ -10,6 +10,7 @@ export const Header = styled.header`
   justify-content: center;
   font-size: 1.5em;
   position: fixed;
+  z-index: 1;
 
   @media only screen and (max-width: 768px) {
     border: none;
