@@ -8,6 +8,8 @@ export const Description = styled.h2`
   font-size: 2.5em;
   font-weight: 400;
   margin: 1em;
+  text-align: justify;
+  text-justify: auto;
 `
 export const Icon = styled.img`
   margin: 1em;

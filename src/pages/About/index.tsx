@@ -1,6 +1,7 @@
 import * as S from './styles'
 import Wrapper from 'components/Wrapper'
 import Header from 'components/Header'
+import Contact from 'components/template/Contact'
 
 export default function About() {
   return (
@@ -34,6 +35,7 @@ export default function About() {
           </S.Card>
         </S.Organizer>
       </Wrapper>
+      <Contact />
     </>
   )
 }
