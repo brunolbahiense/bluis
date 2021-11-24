@@ -1,4 +1,4 @@
-import * as S from './styles'
+import * as S from '../../components/template/About/styles'
 import Wrapper from 'components/Wrapper'
 import Header from 'components/Header'
 import Contact from 'components/template/Contact'
