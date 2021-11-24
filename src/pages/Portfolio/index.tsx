@@ -1,11 +1,11 @@
 import Header from 'components/Header'
-import Portfolio from 'components/template/Portfolio'
+import Projects from 'components/template/Projects'
 
 export default function PortfolioPage() {
   return (
     <>
       <Header />
-      <Portfolio />
+      <Projects />
     </>
   )
 }

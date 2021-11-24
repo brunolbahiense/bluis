@@ -14,11 +14,11 @@ const Header = (props: HeaderProps) => (
     </div>
     <S.Navigation>
       <S.NavIndicator>{props.title}</S.NavIndicator>
-      <Link href="/Portfolio">
-        <S.NavItems>About me</S.NavItems>
+      <Link href="/About">
+        <S.NavItems>Quem somos</S.NavItems>
       </Link>
       <Link href="/Contact">
-        <S.NavItems>Contact me</S.NavItems>
+        <S.NavItems>Contato</S.NavItems>
       </Link>
     </S.Navigation>
   </S.Header>

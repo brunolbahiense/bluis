@@ -3,13 +3,13 @@ import * as S from '../../../styles/Main'
 import Button from 'components/Button'
 import Wrapper from 'components/Wrapper'
 
-export default function Portfolio() {
+export default function Projects() {
   return (
     <>
       <Wrapper background="white">
-        <S.Title>My Projects</S.Title>
+        <S.Title>Projetos</S.Title>
         <S.Description>
-          These are the main projects developed by me:
+          Estes são os projetos que estão sendo desenvolvidos por nós:
         </S.Description>
         <S.Sites>
           <S.ClickTrips>

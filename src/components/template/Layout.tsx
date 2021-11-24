@@ -1,11 +1,11 @@
 import Main from './Main'
-import Portfolio from './Portfolio'
 import Contact from './Contact'
+import Projects from './Projects'
 export default function Layout() {
   return (
     <>
       <Main />
-      <Portfolio />
+      <Projects />
       <Contact />
     </>
   )

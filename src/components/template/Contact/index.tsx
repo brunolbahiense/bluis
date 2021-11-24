@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <>
       <Wrapper>
-        <S.Description>Contact me</S.Description>
+        <S.Description>Entre em contato conosco!</S.Description>
         <SocialMedia />
       </Wrapper>
     </>
