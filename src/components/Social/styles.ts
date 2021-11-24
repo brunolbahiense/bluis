@@ -11,6 +11,6 @@ export const Icon = styled.img`
 `
 export const Links = styled.div`
   margin-top: 3rem;
-  background-color: rgba(238, 238, 238, 0.1);
+  background-color: ${(props) => props.theme.grayL};
   border-radius: 12px;
 `

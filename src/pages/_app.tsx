@@ -1,7 +1,9 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import { ThemeProvider } from 'styled-components'
 
 import GlobalStyles from 'styles/global'
+import theme from 'styles/theme'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -21,7 +23,6 @@ function App({ Component, pageProps }: AppProps) {
           content="Levando sua marca ao mundo digital!"
         />
         <meta property="og:image" content="/img/square.png" />
-
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://bluis.vercel.app/" />
         <meta property="twitter:title" content="Bluis" />
@@ -31,8 +32,10 @@ function App({ Component, pageProps }: AppProps) {
         />
         <meta property="twitter:image" content="/img/square.png" />
       </Head>
-      <GlobalStyles />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }

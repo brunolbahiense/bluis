@@ -1,0 +1,19 @@
+import * as S from './styles'
+import Link from 'next/link'
+
+const Header = () => (
+  <S.Header>
+    <div>
+      <Link href="/">
+        <S.Icon src="/img/logow.svg" alt="logo da empresa Bluis" />
+      </Link>
+    </div>
+    <S.Navigation>
+      <Link href="/About">
+        <S.NavItems>Quem somos</S.NavItems>
+      </Link>
+    </S.Navigation>
+  </S.Header>
+)
+
+export default Header
