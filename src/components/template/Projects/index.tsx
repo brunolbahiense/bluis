@@ -6,8 +6,8 @@ import Wrapper from 'components/Wrapper'
 export default function Projects() {
   return (
     <>
-      <Wrapper background="white">
-        <S.Title>Projetos</S.Title>
+      <Wrapper>
+        <S.Title id="Projects">Projetos</S.Title>
         <S.Description>
           Estes são os projetos que estão sendo desenvolvidos por nós:
         </S.Description>
