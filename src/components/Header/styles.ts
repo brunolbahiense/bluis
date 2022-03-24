@@ -30,7 +30,10 @@ export const Navigation = styled.div`
   display: flex;
   flex-direction: row;
 `
-export const NavItems = styled.h1`
+export const NavItems = styled.a`
+  text-decoration: none;
+  color: ${(props) => props.theme.white};
+  font-size: 2em;
   font-weight: 400;
   margin-left: 2em;
   cursor: pointer;

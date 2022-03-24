@@ -1,14 +1,11 @@
 import * as S from '../../components/template/About/styles'
 import Wrapper from 'components/Wrapper'
-import Header from 'components/Header'
-import Contact from 'components/template/Contact'
 
 export default function About() {
   return (
     <>
-      <Header />
       <Wrapper background="white">
-        <S.Organizer>
+        <S.Organizer id="About">
           <S.Card>
             <S.Title>Sobre nós</S.Title>
             <S.ImgOrganizer>
@@ -35,7 +32,6 @@ export default function About() {
           </S.Card>
         </S.Organizer>
       </Wrapper>
-      <Contact />
     </>
   )
 }

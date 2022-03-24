@@ -27,6 +27,7 @@ export const Title = styled.h1`
 
 export const ClickTrips = styled.div`
   background-image: url(../img/trips.png);
+  background-position: center;
   width: 30em;
   height: 30em;
   display: flex;
@@ -42,6 +43,7 @@ export const ClickTrips = styled.div`
 `
 export const ClickToma = styled.div`
   background-image: url(../img/tomatracker.png);
+  background-position: center;
   width: 30em;
   height: 30em;
   display: flex;

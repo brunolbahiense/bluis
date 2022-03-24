@@ -5,7 +5,7 @@ const SocialMedia = () => (
     <a href="https://github.com/brunolbahiense">
       <S.Icon src="/img/Github.png" />
     </a>
-    <a href="https://www.linkedin.com/in/bruno-lu%C3%ADs-bahiense-73385a119/">
+    <a href="https://www.linkedin.com/in/bruno-luis-bahiense-73385a119/">
       <S.Icon src="/img/linkedin.png" />
     </a>
     <a href="https://www.instagram.com/brunolbahiense/">
