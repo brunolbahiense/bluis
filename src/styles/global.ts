@@ -6,7 +6,6 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   /*  background-color: #06092b; */
   }
 
   html{
@@ -16,7 +15,8 @@ const GlobalStyles = createGlobalStyle`
 
   html, body, #__next{
     height: 100%;
-    background-color: ${(props) => props.theme.blue};
+    background-color: #06092b;
+
   }
 
   body{

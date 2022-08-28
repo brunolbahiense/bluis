@@ -12,8 +12,8 @@ export default function About() {
               <S.Icon src="/img/beard.svg" />
             </S.ImgOrganizer>
             <S.Description>
-              Sommelier de café e entusiasta de Cloud | Crypto | Blockchain
-              Minimalista e fã de e-sports
+              Sommelier de café, minimalista, fã de e-sports e entusiasta de
+              Cloud | Crypto | Blockchain
             </S.Description>
           </S.Card>
 
@@ -25,11 +25,11 @@ export default function About() {
               amor pelo desenvolvimento, sempre fui fã de tecnologias e
               inovações, além de ser bastante curioso para aprender como as
               coisas funcionam.
-              <br />
+              <br /> <br />
               Em 2017 fiz intercâmbio na Austrália com foco no teste acadêmico
               do IELTS, tornando-me fluente na língua da rainha, além de
               aprender a amar um bom Latte Macchiato.
-              <br />
+              <br /> <br />
               Atualmente trabalho no desenvolvimento full-stack de soluções para
               empresas de médio e grande porte e tenho buscado cada vez mais
               explorar o desconhecido me aventurando nessas novas fronteiras do
