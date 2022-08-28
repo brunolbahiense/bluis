@@ -5,7 +5,7 @@ export const Wrapper = styled.main<WrapperProps>`
   color: ${(props) => props.theme.white};
   width: 100%;
   height: auto;
-  padding: 3rem;
+  padding: 4em;
   text-align: center;
   display: flex;
   flex-direction: column;

@@ -7,27 +7,33 @@ export default function About() {
       <Wrapper background="white">
         <S.Organizer id="About">
           <S.Card>
-            <S.Title>Sobre nós</S.Title>
+            <S.Title>Oi, eu sou o Bruno!</S.Title>
             <S.ImgOrganizer>
-              <S.Icon src="/img/afro.svg" />
               <S.Icon src="/img/beard.svg" />
-              <S.Icon src="/img/female.svg" />
             </S.ImgOrganizer>
             <S.Description>
-              Somos uma empresa Tech com o foco em construir uma imagem digital
-              de maneira ágil e descompliada, transormando a sua ideia em um
-              negócio sem barreiras fisicas!
+              Sommelier de café e entusiasta de Cloud | Crypto | Blockchain
+              Minimalista e fã de e-sports
             </S.Description>
           </S.Card>
 
           <S.Card>
-            <S.Title>Inovação em nosso DNA</S.Title>
+            <S.Title>Tecnologia no DNA</S.Title>
             <S.Icon src="/img/DNA.svg" />
             <S.Description>
-              Entendemos que a web está em constante evolução; desta forma,
-              construimos soluções com as mais novas tecnologias do mercado,
-              entregando sempre um produto autualizado e pronto para sustentar
-              seus proximos passos
+              Estudei direito na UFBA, porém descobri no meio deste caminho o
+              amor pelo desenvolvimento, sempre fui fã de tecnologias e
+              inovações, além de ser bastante curioso para aprender como as
+              coisas funcionam.
+              <br />
+              Em 2017 fiz intercâmbio na Austrália com foco no teste acadêmico
+              do IELTS, tornando-me fluente na língua da rainha, além de
+              aprender a amar um bom Latte Macchiato.
+              <br />
+              Atualmente trabalho no desenvolvimento full-stack de soluções para
+              empresas de médio e grande porte e tenho buscado cada vez mais
+              explorar o desconhecido me aventurando nessas novas fronteiras do
+              mundo digital.
             </S.Description>
           </S.Card>
         </S.Organizer>

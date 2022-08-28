@@ -19,7 +19,7 @@ export const Organizer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5em 10em;
+  padding: 3em;
   font-size: 1em;
 `
 export const Card = styled.div`

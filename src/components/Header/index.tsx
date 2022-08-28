@@ -10,7 +10,7 @@ const Header = () => (
     </div>
     <S.Navigation>
       <Link href="#About">
-        <S.NavItems>Quem somos</S.NavItems>
+        <S.NavItems>Sobre mim</S.NavItems>
       </Link>
       <Link href="#Projects">
         <S.NavItems>Projetos</S.NavItems>

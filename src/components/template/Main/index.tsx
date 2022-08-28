@@ -10,9 +10,11 @@ export default function Main() {
             src="/img/Bluis.svg"
             alt="Bluis escrito entre os síbolos < >"
           />
-          <S.Description>Developing your future</S.Description>
+          <S.Description>Desenvolvendo o seu futuro</S.Description>
         </S.RightDiv>
-        <S.Code src="/img/carbon.svg" />
+        <S.LeftDiv>
+          <S.Profile src="/img/profile.jpg" />
+        </S.LeftDiv>
       </S.Content>
     </Wrapper>
   )

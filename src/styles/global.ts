@@ -15,7 +15,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html, body, #__next{
-    height: 100%
+    height: 100%;
+    background-color: ${(props) => props.theme.blue};
   }
 
   body{
