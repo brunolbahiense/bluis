@@ -3,7 +3,7 @@ import Wrapper from 'components/Wrapper'
 
 export default function Partners() {
   return (
-    <Wrapper background="white">
+    <Wrapper background="whiteD">
       <S.Content>
         <S.Title>Parceiros</S.Title>
         <S.Subtitle>

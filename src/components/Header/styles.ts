@@ -7,7 +7,6 @@ export const Header = styled.header`
   align-items: center;
   justify-content: flex-start;
   padding: 3em 20em;
-  background-color: #fff;
 
   @media only screen and (max-width: 768px) {
     padding: 3em;

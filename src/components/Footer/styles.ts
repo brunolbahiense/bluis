@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Footer = styled.footer`
   background-color: ${(props) => props.theme.black};
-  color: ${(props) => props.theme.white};
+  color: ${(props) => props.theme.whiteD};
   max-width: 100vw;
   display: flex;
   flex-direction: row;
@@ -38,7 +38,7 @@ export const ContactDiv = styled.div`
 `
 export const LinkDiv = styled.div`
   width: 50vw;
-  border-left: solid 1px ${(props) => props.theme.white};
+  border-left: solid 1px ${(props) => props.theme.whiteD};
 
   @media only screen and (max-width: 768px) {
     width: 100vw;

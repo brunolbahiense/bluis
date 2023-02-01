@@ -1,7 +1,7 @@
 import * as S from './styles'
 
 export interface WrapperProps {
-  background?: 'white' | 'red' | 'black'
+  background?: 'white' | 'red' | 'black' | 'whiteD'
   children?: React.ReactNode
 }
 const Wrapper = ({ background = 'white', ...props }: WrapperProps) => {
