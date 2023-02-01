@@ -3,19 +3,9 @@ import Link from 'next/link'
 
 const Header = () => (
   <S.Header>
-    <div>
-      <Link href="#">
-        <S.Icon src="/img/logow.svg" alt="logo da empresa Bluis" />
-      </Link>
-    </div>
-    <S.Navigation>
-      <Link href="#About">
-        <S.NavItems>Sobre mim</S.NavItems>
-      </Link>
-      <Link href="#Projects">
-        <S.NavItems>Projetos</S.NavItems>
-      </Link>
-    </S.Navigation>
+    <Link href="#">
+      <S.Icon src="/img/logo.svg" alt="logo da empresa Bluis" />
+    </Link>
   </S.Header>
 )
 

@@ -3,18 +3,21 @@ import Wrapper from 'components/Wrapper'
 
 export default function Main() {
   return (
-    <Wrapper>
+    <Wrapper background="white">
       <S.Content>
-        <S.RightDiv>
-          <S.Logo
-            src="/img/Bluis.svg"
-            alt="Bluis escrito entre os síbolos < >"
-          />
-          <S.Description>Desenvolvendo o seu futuro</S.Description>
-        </S.RightDiv>
-        <S.LeftDiv>
-          <S.Profile src="/img/profile.jpg" />
-        </S.LeftDiv>
+        <S.Profile />
+        <S.TextWrapper>
+          <S.Title>Olá! eu sou o:</S.Title>
+          <S.Name>Bruno Luis Bahiense</S.Name>
+          <S.Description>
+            Sommelier de café e entusiasta de Cloud, Crypto & Blockchain
+            <br />
+            <br />
+            Atualmente trabalho no desenvolvimento full-stack criando portais e
+            plataformas que recuperam o crédito de pessoas físicas e juridicas
+            de forma descomplicada e intuitiva.
+          </S.Description>
+        </S.TextWrapper>
       </S.Content>
     </Wrapper>
   )

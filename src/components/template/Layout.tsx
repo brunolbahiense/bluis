@@ -6,8 +6,8 @@ export default function Layout() {
   return (
     <>
       <Main />
-      <About />
       <Projects />
+      <About />
       <Footer />
     </>
   )
