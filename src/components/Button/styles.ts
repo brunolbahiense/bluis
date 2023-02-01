@@ -2,17 +2,16 @@ import styled from 'styled-components'
 
 export const Button = styled.div`
   width: 6.5em;
-  font-size: 2.5rem;
-  font-weight: 400;
-  padding: 1.5rem;
-  background-color: ${(props) => props.theme.blue};
-  color: #eee;
-  border: none;
+  font-size: 3em;
+  padding: 0.2em;
+  border: 2px solid ${(props) => props.theme.green};
+  color: ${(props) => props.theme.green};
   border-radius: 15px;
   cursor: pointer;
-  margin: 2em;
+  margin: 1em 0;
 
   :hover {
-    background-color: ${(props) => props.theme.gray};
+    color: ${(props) => props.theme.white};
+    background-color: ${(props) => props.theme.green};
   }
 `

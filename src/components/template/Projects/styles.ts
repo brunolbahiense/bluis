@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Title = styled.h1`
   font-size: 6em;
-  color: ${(props) => props.theme.red};
+  color: ${(props) => props.theme.green};
   text-transform: uppercase;
 `
 
@@ -18,42 +18,47 @@ export const Sites = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 5em;
+  margin: 3em 0;
   text-align: center;
   @media only screen and (max-width: 1080px) {
     display: flex;
     flex-direction: column;
   }
 `
+export const SiteIcon = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
 
 export const ClickTrips = styled.div`
   background-image: url('../img/trips.png');
   background-position: center;
-  width: 30em;
-  height: 30em;
+  width: 22em;
+  height: 22em;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 6em;
   border-radius: 10px;
   @media only screen and (max-width: 1080px) {
     width: 20em;
     height: 20em;
-    margin: 3em;
   }
 `
 export const ClickToma = styled.div`
   background-image: url('../img/tomatracker.png');
   background-position: center;
-  width: 30em;
-  height: 30em;
+  width: 22em;
+  height: 22em;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 6em;
   border-radius: 10px;
   @media only screen and (max-width: 1080px) {
     width: 20em;
     height: 20em;
-    margin: 3em;
   }
 `
