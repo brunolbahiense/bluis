@@ -1,15 +1,16 @@
 import Link from 'next/link'
-import * as S from '../../../styles/Main'
+import * as S from './styles'
 import Button from 'components/Button'
 import Wrapper from 'components/Wrapper'
 
 export default function Projects() {
   return (
     <>
-      <Wrapper>
+      <Wrapper background="black">
         <S.Title id="Projects">Projetos</S.Title>
+        <S.Subtitle>Quer conhecer o meu trabalho?</S.Subtitle>
         <S.Description>
-          Estes são os projetos que estão sendo desenvolvidos por nós:
+          Aqui estão alguns projetos que fiz ao longo do meu percurso!
         </S.Description>
         <S.Sites>
           <S.ClickTrips>

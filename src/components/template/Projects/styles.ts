@@ -1,5 +1,18 @@
 import styled from 'styled-components'
 
+export const Title = styled.h1`
+  font-size: 4rem;
+  color: ${(props) => props.theme.red};
+  text-transform: uppercase;
+`
+
+export const Subtitle = styled.h2`
+  font-size: 2.5em;
+`
+export const Description = styled.p`
+  font-size: 2em;
+`
+
 export const Sites = styled.div`
   display: flex;
   flex-direction: row;
@@ -12,21 +25,8 @@ export const Sites = styled.div`
   }
 `
 
-export const Logo = styled.img`
-  width: min(45rem, 100%);
-  margin-bottom: 2rem;
-`
-
-export const Description = styled.h2`
-  font-size: 2.5rem;
-  font-weight: 400;
-`
-export const Title = styled.h1`
-  font-size: 4rem;
-`
-
 export const ClickTrips = styled.div`
-  background-image: url(../img/trips.png);
+  background-image: url('../img/trips.png');
   background-position: center;
   width: 30em;
   height: 30em;
@@ -42,7 +42,7 @@ export const ClickTrips = styled.div`
   }
 `
 export const ClickToma = styled.div`
-  background-image: url(../img/tomatracker.png);
+  background-image: url('../img/tomatracker.png');
   background-position: center;
   width: 30em;
   height: 30em;

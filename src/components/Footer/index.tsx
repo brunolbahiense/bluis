@@ -6,7 +6,7 @@ export default function Footer() {
     <>
       <S.Footer>
         <S.ContactDiv>
-          <S.Title>Project by:</S.Title>
+          <S.Title>Portifolio criado por:</S.Title>
           <Link href="https://bluis.vercel.app/">
             <S.Name>{'<B/uis>'}</S.Name>
           </Link>
@@ -24,9 +24,6 @@ export default function Footer() {
               <S.Icons src="/img/instagram.png" />
             </Link>
           </S.IconsDiv>
-          <Link href="http://github.com/brunolbahiense">
-            <S.Link>@brunolbahiense</S.Link>
-          </Link>
         </S.LinkDiv>
       </S.Footer>
     </>

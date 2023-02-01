@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Footer = styled.footer`
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props) => props.theme.black};
   color: ${(props) => props.theme.white};
   max-width: 100vw;
   display: flex;
@@ -46,7 +46,8 @@ export const LinkDiv = styled.div`
   }
 `
 export const Title = styled.p`
-  font-size: 1.5em;
+  text-transform: uppercase;
+  font-size: 1em;
 `
 export const Name = styled.p`
   font-size: 2.5em;
@@ -55,17 +56,6 @@ export const Name = styled.p`
   cursor: pointer;
   :hover {
     color: ${(props) => props.theme.red};
-    transform: scale(1.1);
-    animation: smooth;
-  }
-`
-export const Link = styled.p`
-  font-size: 1em;
-  cursor: pointer;
-  :hover {
-    color: ${(props) => props.theme.red};
-    transform: scale(1.1);
-    animation: smooth;
   }
 `
 
