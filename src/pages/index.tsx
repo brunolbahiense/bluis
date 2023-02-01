@@ -1,10 +1,14 @@
-import Layout from 'components/template/Layout'
+import Main from './template/Main'
+import Projects from './template/Projects'
+import Footer from 'components/Footer'
 import Header from 'components/Header'
 export default function Home() {
   return (
     <>
       <Header />
-      <Layout />
+      <Main />
+      <Projects />
+      <Footer />
     </>
   )
 }
