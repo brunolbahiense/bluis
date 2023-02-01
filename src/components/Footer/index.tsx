@@ -15,13 +15,13 @@ export default function Footer() {
           <S.Title>Redes Sociais</S.Title>
           <S.IconsDiv>
             <Link href="http://github.com/brunolbahiense">
-              <S.Icons src="/img/github.png" />
+              <S.Icons src="/img/social/github.png" />
             </Link>
             <Link href="https://www.linkedin.com/in/brunolbahiense/">
-              <S.Icons src="/img/linkedin.png" />
+              <S.Icons src="/img/social/linkedin.png" />
             </Link>
             <Link href="https://www.instagram.com/brunolbahiense/">
-              <S.Icons src="/img/instagram.png" />
+              <S.Icons src="/img/social/instagram.png" />
             </Link>
           </S.IconsDiv>
         </S.LinkDiv>
