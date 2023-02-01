@@ -13,7 +13,7 @@ export default function Main() {
             Sommelier de café e entusiasta de Cloud, Crypto & Blockchain
             <br />
             <br />
-            Atualmente trabalho no desenvolvimento full-stack criando portais e
+            Atualmente trabalho no desenvolvimento full-stack, criando portais e
             plataformas que recuperam o crédito de pessoas físicas e juridicas
             de forma descomplicada e intuitiva.
           </S.Description>

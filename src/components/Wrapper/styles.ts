@@ -25,16 +25,13 @@ export const Wrapper = styled.main<WrapperProps>`
     `background: ${props.theme.white};
     color: ${props.theme.blue};
   `};
-  ${(props) =>
-    props.background === 'blue' &&
-    `background: ${props.theme.blue};
-    color: ${props.theme.white};
-  `};
+
   ${(props) =>
     props.background === 'red' &&
     `background: ${props.theme.red};
     color: ${props.theme.whiteD};
   `};
+
   ${(props) =>
     props.background === 'black' &&
     `background: ${props.theme.black};

@@ -1,5 +1,5 @@
+/** Colors */
 export default {
-  /** Colors */
   white: '#fff',
   whiteD: '#fefaec',
   blue: '#06092b',

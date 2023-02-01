@@ -10,10 +10,10 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Bluis</title>
-        <link rel="shortcut icon" href="/img/square.png" />
-        <link rel="apple-touch-icon" href="/img/logob.svg" />
+        <link rel="shortcut icon" href="/img/logo.svg" />
+        <link rel="apple-touch-icon" href="/img/logo.svg" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#06092B" />
+        <meta name="theme-color" content="#fefaec" />
         <meta name="Bluis" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://bluis.vercel.app/" />
@@ -22,7 +22,7 @@ function App({ Component, pageProps }: AppProps) {
           property="og:description"
           content="Levando sua marca ao mundo digital!"
         />
-        <meta property="og:image" content="/img/square.png" />
+        <meta property="og:image" content="/img/logo.svg" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://bluis.vercel.app/" />
         <meta property="twitter:title" content="Bluis" />
@@ -30,7 +30,7 @@ function App({ Component, pageProps }: AppProps) {
           property="twitter:description"
           content="Levando sua marca ao mundo digital!"
         />
-        <meta property="twitter:image" content="/img/square.png" />
+        <meta property="twitter:image" content="/img/logo.svg" />
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
