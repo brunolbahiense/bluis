@@ -47,7 +47,7 @@ export const LinkDiv = styled.div`
 `
 export const Title = styled.p`
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 1.4em;
 `
 export const Name = styled.p`
   font-size: 2.5em;

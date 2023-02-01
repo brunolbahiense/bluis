@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 
 export const Title = styled.h1`
-  font-size: 4rem;
+  font-size: 6em;
   color: ${(props) => props.theme.red};
   text-transform: uppercase;
 `
 
 export const Subtitle = styled.h2`
-  font-size: 2.5em;
+  font-size: 4em;
 `
 export const Description = styled.p`
-  font-size: 2em;
+  font-size: 3em;
 `
 
 export const Sites = styled.div`

@@ -31,6 +31,12 @@ function App({ Component, pageProps }: AppProps) {
           content="Levando sua marca ao mundo digital!"
         />
         <meta property="twitter:image" content="/img/logo.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
