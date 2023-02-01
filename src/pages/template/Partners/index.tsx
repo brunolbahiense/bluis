@@ -1,7 +1,7 @@
 import * as S from './styles'
 import Wrapper from 'components/Wrapper'
 
-export default function Main() {
+export default function Partners() {
   return (
     <Wrapper background="white">
       <S.Content>
