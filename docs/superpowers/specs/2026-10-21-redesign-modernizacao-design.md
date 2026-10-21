@@ -39,8 +39,14 @@ Recrutadores/empresas **e** potenciais clientes: portfólio pessoal com CTA de c
 | Fontes | `next/font/google`: Fraunces (títulos), Inter (texto), JetBrains Mono (rótulos/tags) |
 | Lint/format | ESLint 9 (flat config, `eslint-config-next`) + Prettier 3 (`.prettierrc` atual mantido) |
 | Runtime | Node.js >= 20 (`engines` + `.nvmrc` com `22`), Yarn 1 |
+| Bundler | Turbopack (padrão do Next 16) em dev e build |
+| Otimização | React Compiler (`reactCompiler: true` + `babel-plugin-react-compiler`) |
 
 Next 16 em vez de 15: o padrão pede "15+"; 16 é o `latest` atual e evita nova migração em curto prazo.
+
+Avaliados e descartados nesta rodada: Tailwind v4 / CSS Modules no lugar de styled-components (mesmo com styled-components em modo de manutenção e exigindo `'use client'`), pnpm e Biome — todos divergem do padrão do portfólio e do tomatracker. Se um dia mudar, muda primeiro no `portfolio-standards`.
+
+Risco: suporte do Turbopack a `compiler.styledComponents`. Validar no primeiro passo da implementação; se falhar, usar `--webpack` no build e registrar no README.
 
 ## Identidade visual
 
@@ -59,7 +65,7 @@ Direção aprovada: estrutura minimalista + paleta atual + detalhes monospace.
 - **Tipografia:** títulos em Fraunces (300 no hero/contato, 500 em seções), corpo em Inter, rótulos `// assim` e tags em JetBrains Mono.
 - Layout de coluna única, largura máxima ~1100px, divisores finos entre seções; responsivo com breakpoint mobile (grids viram coluna única).
 
-## Estrutura da página (uma rota: `/`)
+## Estrutura da página (rotas `/pt` e `/en`)
 
 1. **Header**: wordmark à esquerda; âncoras Experiência · Projetos · Contato e seletor PT/EN à direita.
 2. **Hero**: rótulo `// senior software engineer`, frase-título em serifa com uma palavra em vermelho itálico, bio curta, botões "Vamos conversar" (âncora para Contato) e "GitHub ↗".
@@ -88,12 +94,15 @@ Textos iniciais: os do mockup aprovado e do LinkedIn. O Bruno vai reescrever qua
 
 ```
 src/
+├── proxy.ts                    # redireciona `/` para `/pt` ou `/en` (cookie > Accept-Language > pt)
 ├── app/
-│   ├── layout.tsx              # <html>, fontes, metadata (title, description, OG, twitter), registry
-│   ├── page.tsx                # compõe as seções
-│   ├── registry.tsx            # StyledComponentsRegistry + LocaleProvider + ThemeProvider + GlobalStyles
 │   ├── icon.svg                # favicon (triângulos)
-│   └── opengraph-image.tsx     # imagem OG 1200x630 gerada (nome + cargo na paleta)
+│   ├── registry.tsx            # StyledComponentsRegistry + ThemeProvider + GlobalStyles
+│   └── [locale]/
+│       ├── layout.tsx          # <html lang>, fontes, generateMetadata, generateStaticParams, LocaleProvider
+│       ├── page.tsx            # compõe as seções
+│       ├── not-found.tsx       # 404 simples no idioma
+│       └── opengraph-image.tsx # imagem OG 1200x630 gerada por idioma (nome + cargo na paleta)
 ├── components/                 # <Nome>/index.tsx + styles.ts
 │   ├── Header/
 │   ├── LanguageSwitcher/
@@ -105,12 +114,12 @@ src/
 │   ├── Contact/
 │   ├── Footer/
 │   └── SectionTitle/           # título de seção + rótulo numérico, reutilizado
-├── contexts/LocaleContext.tsx  # locale atual + setter; detecção pelo navegador
-├── hooks/useLocale.ts          # retorna { translations, locale, setLocale }
+├── contexts/LocaleContext.tsx  # recebe o locale da rota e expõe as traduções
+├── hooks/useLocale.ts          # retorna { translations, locale }
 ├── locales/
 │   ├── en.ts                   # fonte da verdade; exporta type Translations
 │   ├── pt.ts                   # tipado como Translations
-│   └── index.ts                # translations, type Locale
+│   └── index.ts                # translations, type Locale, locales, defaultLocale, isLocale()
 └── styles/
     ├── theme.ts                # tokens de cor, fontes, breakpoints
     ├── fonts.ts                # strings das CSS vars do next/font
@@ -123,12 +132,14 @@ src/
 - **Dados em locales:** projetos, experiências, grupos de stack e métricas são arrays dentro de `en.ts`/`pt.ts`. Nomes de tecnologias são iguais nos dois idiomas, mas ficam no locale para manter uma fonte só por seção. URLs e caminhos de imagem também ficam no locale junto do item. Adicionar projeto = adicionar um item em cada locale; o TypeScript acusa divergência de forma.
 - **Nenhuma cor/fonte hardcoded** em componente: tudo via `theme`.
 
-### i18n
+### i18n por rota
 
-- Padrão inicial `pt` (público principal brasileiro; o HTML estático sai em pt-BR, bom para SEO). No cliente, se `navigator.language` não começar com `pt`, troca para `en`.
-- O seletor PT/EN troca o idioma e persiste a escolha em `localStorage` (try/catch; sem storage, só cai na detecção).
-- `document.documentElement.lang` acompanha o idioma (`pt-BR` / `en`).
-- Metadata (title/description/OG) fica em português.
+- Duas rotas estáticas, `/pt` e `/en`, geradas no build via `generateStaticParams`. Locale inválido → `notFound()`.
+- `proxy.ts` só atua em `/` (e caminhos sem prefixo de idioma): escolhe pelo cookie `locale`, senão pelo `Accept-Language` (começa com `pt` → `pt`, senão `en`), senão `pt`; redireciona com 307.
+- O seletor PT/EN é um par de links (`/pt`, `/en`) que grava o cookie `locale` ao clicar, para a próxima visita a `/` respeitar a escolha.
+- `<html lang>` vem do servidor (`pt-BR` / `en`); não há troca de texto no cliente depois do carregamento.
+- `generateMetadata` por idioma (title, description, OG/twitter), com `alternates.languages` (hreflang) apontando uma versão para a outra e `canonical` por rota.
+- Textos de metadata também ficam nos locales.
 
 ### Acessibilidade e SEO
 
@@ -150,7 +161,10 @@ src/
 
 - `yarn lint`, `yarn tsc --noEmit` e `yarn build` sem erros no Node 22.
 - `yarn audit` sem vulnerabilidades altas/críticas em dependências de runtime.
-- No navegador (dev e build de produção): layout desktop e mobile (~375px), troca PT/EN, persistência da escolha, âncoras do menu, links externos em nova aba, `mailto:` do contato, favicon e imagem OG (`/opengraph-image`).
+- Saída do build mostra `/pt` e `/en` como páginas estáticas (SSG).
+- `curl -I` em `/` com `Accept-Language: en-US` → 307 para `/en`; sem header → `/pt`; com cookie `locale=en` → `/en`; `/xx` → 404.
+- HTML de `/en` já vem em inglês do servidor, com `<html lang="en">` e `hreflang` corretos.
+- No navegador (dev e build de produção): layout desktop e mobile (~375px), troca PT/EN, âncoras do menu, links externos em nova aba, `mailto:` do contato, favicon e imagem OG por idioma.
 
 ## Commits
 
