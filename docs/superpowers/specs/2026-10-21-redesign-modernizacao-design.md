@@ -186,7 +186,7 @@ tests/e2e/                           # Playwright
 
 - `/pt` e `/en` estáticas via `generateStaticParams`; locale inválido → 404.
 - `proxy.ts`: em `/` e caminhos sem prefixo, escolhe cookie `locale` → `Accept-Language` (começa com `pt` → pt, senão en) → `pt`, e redireciona (307). Em `/pt` e `/en`, deixa passar e grava o cookie `locale`.
-- Seletor PT/EN e o comando "Ver em inglês/português" são links para a outra rota, preservando a âncora quando houver.
+- Seletor PT/EN (link simples, sem JS) e o comando "Ver em inglês/português" do Spotlight levam à outra rota; o comando preserva a âncora atual.
 - `<html lang>` vem do servidor; `generateMetadata` por idioma com `alternates.languages` (hreflang) e `canonical`.
 
 ## Acessibilidade
