@@ -177,7 +177,7 @@ tests/e2e/                           # Playwright
 ```
 
 - **Server Components** para todo o conteúdo (Header, Hero, Metrics, Experience, Stack, Projects, Contact, Footer). **Ilhas de cliente** só onde há interação: Spotlight, CommandBar (gatilho), LiveBuild, Inspector, MagneticButton, Ripple, CountUp e MetricCard (tilt/brilho).
-- **Textos via props:** `page.tsx` chama `getTranslations(locale)` e passa a cada seção o seu trecho (`t`). Ilhas recebem o que precisam por props (o Spotlight recebe o índice de busca já montado no servidor).
+- **Textos via props:** `page.tsx` chama `getTranslations(locale)` e passa a cada seção o seu trecho (`t`). Ilhas recebem o que precisam por props (o Spotlight recebe os trechos de locale necessários e monta o catálogo no cliente com `buildCatalog`, que é barato e puro).
 - **Dados em locales:** seções, perguntas frequentes (pergunta, palavras-chave, resposta, widget), comandos, projetos, experiências, stack, métricas, cenas do LiveBuild e textos de metadata. `pt.ts` é tipado por `Translations` (de `en.ts`), então chave faltando quebra o build.
 - **Componentes:** `export default function <Nome>({ t }: Props)`, `import S from './styles.module.css'`, `className={S.algo}`. Nenhuma cor/fonte/raio hardcoded: tudo `var(--…)`.
 - **Breakpoint único** `48rem` (documentado em `tokens.css`).
