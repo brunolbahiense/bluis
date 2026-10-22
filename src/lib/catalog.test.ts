@@ -45,14 +45,18 @@ describe('catálogo do Spotlight', () => {
   })
 
   it('ids são únicos', () => {
-    const ids = catalog.map((entry) => entry.id)
-    expect(new Set(ids).size).toBe(ids.length)
+    for (const locale of Object.values(translations)) {
+      const ids = buildCatalog(locale).map((entry) => entry.id)
+      expect(new Set(ids).size).toBe(ids.length)
+    }
   })
 
   it('links externos são https', () => {
-    for (const entry of catalog) {
-      if (entry.action.kind === 'openUrl')
-        expect(entry.action.url).toMatch(/^https:\/\//)
+    for (const locale of Object.values(translations)) {
+      for (const entry of buildCatalog(locale)) {
+        if (entry.action.kind === 'openUrl')
+          expect(entry.action.url).toMatch(/^https:\/\//)
+      }
     }
   })
 

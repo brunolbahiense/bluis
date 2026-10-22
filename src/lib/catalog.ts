@@ -123,19 +123,21 @@ export function buildCatalog({
     }
   ]
 
-  const projectEntries = projects.items.map((project): SpotlightEntry => ({
-    id: `project-${project.name}`,
-    title: project.name,
-    subtitle: project.description,
-    group: 'content',
-    kind: kinds.project,
-    icon: 'project',
-    action: { kind: 'openUrl', url: project.href },
-    showWhenEmpty: false
-  }))
+  const projectEntries = projects.items.map(
+    (project, index): SpotlightEntry => ({
+      id: `project-${index}`,
+      title: project.name,
+      subtitle: project.description,
+      group: 'content',
+      kind: kinds.project,
+      icon: 'project',
+      action: { kind: 'openUrl', url: project.href },
+      showWhenEmpty: false
+    })
+  )
 
-  const roleEntries = experience.items.map((item): SpotlightEntry => ({
-    id: `role-${item.period}`,
+  const roleEntries = experience.items.map((item, index): SpotlightEntry => ({
+    id: `role-${index}`,
     title: item.role,
     subtitle: item.period,
     group: 'content',
@@ -145,17 +147,18 @@ export function buildCatalog({
     showWhenEmpty: false
   }))
 
-  const technologyEntries = experience.stackGroups.flatMap((group) =>
-    group.items.map((technology): SpotlightEntry => ({
-      id: `technology-${technology}`,
-      title: technology,
-      subtitle: group.name,
-      group: 'content',
-      kind: kinds.technology,
-      icon: 'technology',
-      action: { kind: 'scroll', sectionId: 'experience' },
-      showWhenEmpty: false
-    }))
+  const technologyEntries = experience.stackGroups.flatMap(
+    (group, groupIndex) =>
+      group.items.map((technology, technologyIndex): SpotlightEntry => ({
+        id: `technology-${groupIndex}-${technologyIndex}`,
+        title: technology,
+        subtitle: group.name,
+        group: 'content',
+        kind: kinds.technology,
+        icon: 'technology',
+        action: { kind: 'scroll', sectionId: 'experience' },
+        showWhenEmpty: false
+      }))
   )
 
   return [
