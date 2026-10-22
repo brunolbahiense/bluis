@@ -8,10 +8,11 @@ type Props = {
   to: number
   locale: string
   suffix?: string
-  // Se usar minimumFractionDigits, passe também maximumFractionDigits (o padrão é 0).
+  // O padrão de maximumFractionDigits é 0, ou minimumFractionDigits quando ele for maior.
   formatOptions?: Intl.NumberFormatOptions
   durationMs?: number
   // Controle externo (LiveBuild). Sem ele, conta quando entra na tela.
+  // Espera-se false → true uma vez por montagem; para repetir, remonte com key.
   play?: boolean
   // O que mostrar antes de tocar: valor final (bom para HTML do servidor) ou zero.
   idle?: 'final' | 'zero'
@@ -54,9 +55,14 @@ export default function CountUp({
     isComplete = progress === 1
   }
 
+  // maximumFractionDigits precisa ser >= minimumFractionDigits, senão Intl.NumberFormat lança RangeError.
+  const maximumFractionDigits =
+    formatOptions?.maximumFractionDigits ??
+    formatOptions?.minimumFractionDigits ??
+    0
   const formatter = new Intl.NumberFormat(locale, {
-    maximumFractionDigits: 0,
-    ...formatOptions
+    ...formatOptions,
+    maximumFractionDigits
   })
 
   return (
