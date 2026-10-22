@@ -1,13 +1,16 @@
 import { describe, expect, it } from 'vitest'
 import { translations } from 'locales'
 
-function shapeOf(value: unknown): unknown {
-  if (Array.isArray(value)) return value.map(shapeOf)
+function shapeOf(value: unknown, key?: string): unknown {
+  // keywords são termos de busca livres: cada idioma pode ter uma quantidade
+  // diferente de sinônimos, então só comparamos a forma, não o tamanho
+  if (key === 'keywords' && Array.isArray(value)) return 'string[]'
+  if (Array.isArray(value)) return value.map((item) => shapeOf(item))
   if (value && typeof value === 'object') {
     return Object.fromEntries(
       Object.entries(value)
         .sort(([firstKey], [secondKey]) => firstKey.localeCompare(secondKey))
-        .map(([key, item]) => [key, shapeOf(item)])
+        .map(([entryKey, item]) => [entryKey, shapeOf(item, entryKey)])
     )
   }
   return typeof value
@@ -39,6 +42,19 @@ describe('locales', () => {
   it('não têm texto vazio', () => {
     expect(emptyStringPaths(translations.pt)).toEqual([])
     expect(emptyStringPaths(translations.en)).toEqual([])
+  })
+
+  it('métricas com contagem têm sufixo', () => {
+    for (const locale of [translations.pt, translations.en]) {
+      for (const item of locale.metrics.items) {
+        if (item.countTo !== null) expect(item.suffix.trim()).not.toBe('')
+      }
+    }
+  })
+
+  it('cada idioma declara o próprio locale', () => {
+    expect(translations.pt.locale).toBe('pt')
+    expect(translations.en.locale).toBe('en')
   })
 
   it('perguntas frequentes têm ids únicos e iguais nos dois idiomas', () => {
