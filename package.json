@@ -1,45 +1,39 @@
 {
-  "name": "boilerplate",
-  "version": "0.1.0",
+  "name": "bluis",
+  "version": "2.0.0",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/build-info.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src --max-warnings=0",
-    "test:watch": "yarn test --watch"
-  },
-  "lint-estaged": {
-    "src/**/*": [
-      "yarn lint --fix",
-      "yarn test --findRelatedTests --bail"
-    ]
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
-    "next": "10.0.9",
-    "next-pwa": "^5.0.6",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "styled-components": "^5.2.1",
-    "webpack": "4"
+    "next": "16.4.2",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "@babel/preset-typescript": "^7.13.0",
-    "@testing-library/react": "^11.2.5",
-    "@types/jest": "^26.0.20",
-    "@types/node": "^14.14.35",
-    "@types/react": "^17.0.3",
-    "@types/styled-components": "^5.1.9",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "babel-plugin-styled-components": "^1.12.0",
-    "eslint": "^7.22.0",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "lint-staged": "^10.5.4",
-    "prettier": "2.2.1",
-    "typescript": "^4.2.3"
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.7",
+    "prettier": "^3.9.10",
+    "typescript": "~5.9.3",
+    "vite": "^8",
+    "vitest": "^5.0.5"
   }
 }
