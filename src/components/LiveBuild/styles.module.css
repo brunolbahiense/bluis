@@ -195,10 +195,25 @@
 }
 
 .card {
+  min-height: 9rem;
   padding: 0.75rem 0.9rem;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   background: var(--color-cream);
+}
+
+/*
+ * KpiCard (dashboard) e OfferCard (acordos) são as únicas cenas que usam
+ * .card sozinho, sem .table/.flow/.chat: sem essa regra ficam bem mais
+ * baixas que as outras e sobra um vão grande antes do botão (.ctaPiece tem
+ * margin-top: auto). Cresce mais que o min-height base e vira coluna flex
+ * para o preenchimento (.chart/.steps) esticar e ocupar o espaço, em vez de
+ * deixar vazio dentro do próprio card.
+ */
+.metricCard {
+  display: flex;
+  flex-direction: column;
+  min-height: 12.75rem;
 }
 
 .cardLabel {
@@ -240,9 +255,9 @@
 
 .chart {
   display: flex;
+  flex: 1;
   align-items: flex-end;
   gap: 6px;
-  height: 3.1rem;
   margin-top: 0.55rem;
 }
 
@@ -492,6 +507,8 @@
 
 .steps {
   display: flex;
+  flex: 1;
+  align-items: center;
   gap: 5px;
   margin-top: 0.65rem;
 }
@@ -603,5 +620,10 @@
 
   .panel {
     height: 22rem;
+  }
+
+  /* O painel é 2rem mais baixo aqui: acompanha para manter o mesmo vão antes do botão. */
+  .metricCard {
+    min-height: 10.75rem;
   }
 }

@@ -16,7 +16,12 @@ export default function DealsScene({
   return (
     <>
       <AppHeader title={deals.title} />
-      <Piece name="<OfferCard />" order={1} depth={30} className={S.card}>
+      <Piece
+        name="<OfferCard />"
+        order={1}
+        depth={30}
+        className={`${S.card} ${S.metricCard}`}
+      >
         <span className={S.cardLabel}>{deals.kpiLabel}</span>
         <b className={S.kpi}>
           <CountUp
