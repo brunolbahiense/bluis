@@ -43,7 +43,7 @@
   position: absolute;
   inset: 0;
   background-image: radial-gradient(
-    rgba(36, 36, 44, 0.13) 1px,
+    color-mix(in srgb, var(--color-ink) 13%, transparent) 1px,
     transparent 1px
   );
   background-size: 14px 14px;
@@ -518,7 +518,7 @@
   height: 2.5rem;
   border-radius: var(--radius-md);
   background: var(--scene);
-  color: #fff;
+  color: var(--color-cream);
   font-size: 0.8rem;
   font-weight: 600;
   transition:

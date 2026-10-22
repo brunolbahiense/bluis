@@ -78,6 +78,7 @@ export default function LiveBuild({ t, numberLocale, currency }: Props) {
       }
       setSceneIndex((index) => (index + 1) % scenes.length)
       setPhase('enter')
+      setTip(null)
     }, phaseDurationsMs[phase])
     return () => window.clearTimeout(timer)
   }, [isPlaying, phase])
@@ -85,6 +86,7 @@ export default function LiveBuild({ t, numberLocale, currency }: Props) {
   function showNextScene() {
     setSceneIndex((index) => (index + 1) % scenes.length)
     setPhase('enter')
+    setTip(null)
   }
 
   function onPointerMove(e: PointerEvent<HTMLDivElement>) {
