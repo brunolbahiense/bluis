@@ -60,4 +60,8 @@ describe('copyrightYear', () => {
       })
     ).toBe(2026)
   })
+
+  it('usa o ano atual quando builtAt não é uma data', () => {
+    expect(copyrightYear(developmentBuildInfo)).toBe(new Date().getFullYear())
+  })
 })

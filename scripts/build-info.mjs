@@ -1,6 +1,6 @@
 // Roda os testes unitários e grava os números reais do build em src/generated/build-info.json.
 // Se algum teste falhar, o build para aqui — o site nunca publica com testes quebrados.
-import { execSync } from 'node:child_process'
+import { execFileSync, execSync } from 'node:child_process'
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 
@@ -8,19 +8,31 @@ const reportPath = join(process.cwd(), '.vitest-report.json')
 const outputPath = join(process.cwd(), 'src', 'generated', 'build-info.json')
 
 try {
-  execSync(
-    `yarn vitest run --reporter=default --reporter=json --outputFile.json=${reportPath}`,
-    {
-      stdio: 'inherit'
-    }
+  execFileSync(
+    'yarn',
+    [
+      'vitest',
+      'run',
+      '--reporter=default',
+      '--reporter=json',
+      `--outputFile.json=${reportPath}`
+    ],
+    { stdio: 'inherit' }
   )
 } catch {
   console.error('\nTestes falharam — build interrompido.')
   process.exit(1)
 }
 
-const report = JSON.parse(readFileSync(reportPath, 'utf8'))
-rmSync(reportPath)
+let report
+try {
+  report = JSON.parse(readFileSync(reportPath, 'utf8'))
+  rmSync(reportPath)
+} catch {
+  console.error('\nRelatório do Vitest não encontrado — build interrompido.')
+  process.exit(1)
+}
+
 const packageJson = JSON.parse(
   readFileSync(join(process.cwd(), 'package.json'), 'utf8')
 )
