@@ -53,6 +53,7 @@ export default function SpotlightResults({
               aria-selected={index === activeIndex}
               className={S.option}
               onMouseMove={() => index !== activeIndex && onHover(index)}
+              onMouseDown={(e) => e.preventDefault()}
               onClick={() => onSelect(entry)}
             >
               <span
