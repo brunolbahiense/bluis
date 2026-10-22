@@ -1,0 +1,12 @@
+.toggle {
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.toggle:hover,
+.toggle[aria-pressed='true'] {
+  color: var(--color-ink);
+}

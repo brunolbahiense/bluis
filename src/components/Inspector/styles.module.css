@@ -1,0 +1,93 @@
+.panel {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 90;
+  width: 15.5rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-ink);
+  box-shadow: var(--shadow-float);
+  color: var(--color-cream);
+  font: 400 0.7rem / 1.7 var(--font-mono);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+}
+
+.close {
+  padding: 0.15rem 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--color-cream) 30%, transparent);
+  border-radius: var(--radius-sm);
+}
+
+.hint {
+  margin-top: 0.35rem;
+  color: color-mix(in srgb, var(--color-cream) 70%, transparent);
+}
+
+.heading {
+  margin-top: 0.85rem;
+  color: var(--color-highlight);
+  font: 500 0.62rem / 1.4 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.list {
+  list-style: none;
+}
+
+.swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 0.45rem;
+  border: 1px solid color-mix(in srgb, var(--color-cream) 35%, transparent);
+  border-radius: 3px;
+  vertical-align: -1px;
+}
+
+.build {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 0.75rem;
+}
+
+.build dd {
+  margin: 0;
+  text-align: right;
+}
+
+.tip {
+  position: fixed;
+  z-index: 95;
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-ink);
+  color: var(--color-cream);
+  font: 400 0.66rem / 1.6 var(--font-mono);
+  pointer-events: none;
+}
+
+.tip b {
+  color: var(--color-highlight);
+  font-weight: 500;
+}
+
+@media (max-width: 48rem) {
+  .panel {
+    top: auto;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    width: auto;
+    max-height: 45vh;
+  }
+}
