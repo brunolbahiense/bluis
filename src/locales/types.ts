@@ -182,6 +182,8 @@ export type Translations = {
     builtAt: string
     tests: string
     testsValue: string
+    tipPadding: string
+    tipRadius: string
   }
   notFound: { title: string; body: string; back: string }
 }

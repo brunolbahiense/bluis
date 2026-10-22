@@ -401,7 +401,9 @@ const pt: Translations = {
     commit: 'commit',
     builtAt: 'build',
     tests: 'testes',
-    testsValue: '{passed}/{total} passaram'
+    testsValue: '{passed}/{total} passaram',
+    tipPadding: 'padding',
+    tipRadius: 'raio'
   },
   notFound: {
     title: 'Página não encontrada',

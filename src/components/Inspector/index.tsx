@@ -2,21 +2,9 @@
 
 import { useEffect, useState } from 'react'
 import { useInspector } from 'contexts/InspectorContext'
-import type { BuildInfo } from 'lib/buildInfo'
+import { formatBuiltAt, type BuildInfo } from 'lib/buildInfo'
 import type { Translations } from 'locales'
 import S from './styles.module.css'
-
-// formatBuiltAt não é importado de lib/buildInfo: esse módulo também lê
-// arquivos (node:fs) para o server, e o Turbopack não consegue remover esse
-// trecho ao empacotar um componente de cliente, quebrando o build de produção.
-function formatBuiltAt(builtAt: string, dateLocale: string) {
-  const date = new Date(builtAt)
-  if (Number.isNaN(date.getTime())) return builtAt
-  return new Intl.DateTimeFormat(dateLocale, {
-    dateStyle: 'medium',
-    timeStyle: 'short'
-  }).format(date)
-}
 
 const colorTokens = [
   '--color-cream',
@@ -28,6 +16,7 @@ const colorTokens = [
 ]
 
 const tipWidth = 230
+const tipHeight = 90
 
 type InspectTip = {
   name: string
@@ -80,7 +69,7 @@ export default function Inspector({ t, buildInfo, dateLocale }: Props) {
         ].join(' '),
         radius: `${style.borderTopLeftRadius}${supportsSquircle ? ' · squircle' : ''}`,
         x: Math.min(e.clientX + 14, window.innerWidth - tipWidth),
-        y: e.clientY + 16
+        y: Math.min(e.clientY + 16, window.innerHeight - tipHeight)
       })
     }
 
@@ -151,9 +140,9 @@ export default function Inspector({ t, buildInfo, dateLocale }: Props) {
           <br />
           {tip.size}
           <br />
-          padding {tip.padding}
+          {t.tipPadding} {tip.padding}
           <br />
-          radius {tip.radius}
+          {t.tipRadius} {tip.radius}
         </div>
       )}
     </>

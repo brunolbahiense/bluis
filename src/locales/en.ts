@@ -398,7 +398,9 @@ const en: Translations = {
     commit: 'commit',
     builtAt: 'built',
     tests: 'tests',
-    testsValue: '{passed}/{total} passing'
+    testsValue: '{passed}/{total} passing',
+    tipPadding: 'padding',
+    tipRadius: 'radius'
   },
   notFound: {
     title: 'Page not found',

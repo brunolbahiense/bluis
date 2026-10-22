@@ -5,9 +5,9 @@ import { describe, expect, it } from 'vitest'
 import {
   copyrightYear,
   developmentBuildInfo,
-  formatBuiltAt,
-  readBuildInfo
+  formatBuiltAt
 } from 'lib/buildInfo'
+import { readBuildInfo } from 'lib/readBuildInfo'
 
 const directory = mkdtempSync(join(tmpdir(), 'build-info-'))
 
