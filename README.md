@@ -1,34 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧩 Bruno Bahiense — Portfolio
 
-## Getting Started
+My personal site: an interface that shows how I build software instead of describing it.
 
-First, run the development server:
+**Live app:** [bluis.vercel.app](https://bluis.vercel.app/)
+
+![Bruno Bahiense portfolio screenshot](docs/screenshot.png)
+
+A bilingual (PT/EN) portfolio built like a product. A ⌘K Spotlight searches the site's own content, a hero panel assembles different products from the same components, and an Inspect mode reveals the components, design tokens and real build numbers behind the interface.
+
+## Features
+
+- **Spotlight (⌘K)** — keyboard-first search over sections, projects, roles, technologies and frequent questions; local and instant, with no AI and no per-use cost.
+- **LiveBuild** — dashboard, report, automation, support and deals interfaces assembling in a loop; tilts in layers with the mouse and pauses when off-screen.
+- **Inspect mode** — outlines every component, shows live size, padding and radius on hover, plus the design tokens and the build's version, commit and test results.
+- **Micro-interactions** — magnetic buttons, squircle ripples, cursor-following card highlights and count-up metrics, all disabled under `prefers-reduced-motion`.
+- **Bilingual by route** — `/pt` and `/en`, chosen by cookie or `Accept-Language`, with every string in typed locale files.
+
+## Tech stack
+
+- [Next.js 16](https://nextjs.org/) (App Router, Server Components, Turbopack)
+- [React 19](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/)
+- CSS Modules with design tokens in CSS custom properties (squircle corners via `corner-shape`)
+- [Vitest](https://vitest.dev/) and [Playwright](https://playwright.dev/)
+
+No state management or UI library — Server Components for content and a few small client islands.
+
+## Getting started
+
+Requires Node.js 22.12+ and Yarn.
 
 ```bash
-npm run dev
-# or
+git clone https://github.com/brunolbahiense/bluis.git
+cd bluis
+yarn install
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+| Script          | Description                                                        |
+| --------------- | ------------------------------------------------------------------ |
+| `yarn dev`      | Start the development server                                       |
+| `yarn build`    | Run unit tests, write build info and build for production          |
+| `yarn start`    | Serve the production build                                         |
+| `yarn lint`     | Run lint checks                                                    |
+| `yarn test`     | Run unit tests                                                     |
+| `yarn test:e2e` | Run end-to-end tests against `yarn start` (run `yarn build` first) |
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Project structure
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+src/
+├── app/          # routes: /[locale] layout, page, not-found and OG image
+├── components/   # one folder per component: index.tsx + styles.module.css
+├── contexts/     # Spotlight and Inspector state
+├── generated/    # build-info.json, written by the prebuild script
+├── hooks/        # pointer, motion, hotkey and visibility hooks
+├── lib/          # search, Spotlight catalog, locale choice, build info (pure + server-only reader)
+├── locales/      # every string and data list, in pt and en
+├── styles/       # design tokens, global styles and fonts
+├── test/         # Vitest stub for server-only
+├── types/        # ambient type declarations
+└── proxy.ts      # redirects to /pt or /en
+scripts/          # prebuild: runs tests and writes build info
+tests/e2e/        # Playwright
+```
 
-## Learn More
+## Author
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Made by **Bruno Bahiense** — [GitHub](https://github.com/brunolbahiense) · [LinkedIn](https://www.linkedin.com/in/brunolbahiense/)
