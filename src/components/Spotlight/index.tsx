@@ -93,11 +93,16 @@ function SpotlightSession({ t, projects, experience, contact, locale }: Props) {
           .getElementById(action.sectionId)
           ?.scrollIntoView({ behavior: isReducedMotion ? 'auto' : 'smooth' })
         return
-      case 'copyEmail':
-        await copyText(contact.email)
-        notify(t.toasts.emailCopied)
+      case 'copyEmail': {
+        const copied = await copyText(contact.email)
+        notify(
+          copied
+            ? t.toasts.emailCopied
+            : t.toasts.copyFailed.replace('{email}', contact.email)
+        )
         close()
         return
+      }
       case 'openUrl':
         window.open(action.url, '_blank', 'noopener,noreferrer')
         close()

@@ -5,12 +5,18 @@ import useRipple from 'hooks/useRipple'
 import { copyText } from 'lib/clipboard'
 import S from './styles.module.css'
 
-type Props = { email: string; label: string; copiedMessage: string }
+type Props = {
+  email: string
+  label: string
+  copiedMessage: string
+  failedMessage: string
+}
 
 export default function CopyEmailButton({
   email,
   label,
-  copiedMessage
+  copiedMessage,
+  failedMessage
 }: Props) {
   const { notify } = useSpotlight()
   const createRipple = useRipple()
@@ -21,8 +27,8 @@ export default function CopyEmailButton({
       className={S.button}
       onPointerDown={createRipple}
       onClick={async () => {
-        await copyText(email)
-        notify(copiedMessage)
+        const copied = await copyText(email)
+        notify(copied ? copiedMessage : failedMessage)
       }}
       data-component="<CopyEmailButton />"
     >

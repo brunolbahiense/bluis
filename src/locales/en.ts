@@ -319,6 +319,7 @@ const en: Translations = {
     back: 'back to search',
     toasts: {
       emailCopied: 'E-mail copied ✓',
+      copyFailed: "Couldn't copy — the e-mail is {email}",
       inspectOn: 'Inspect mode on',
       inspectOff: 'Inspect mode off'
     }

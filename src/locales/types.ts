@@ -120,7 +120,12 @@ export type Translations = {
     empty: { title: string; action: string }
     footer: { navigate: string; open: string; close: string; note: string }
     back: string
-    toasts: { emailCopied: string; inspectOn: string; inspectOff: string }
+    toasts: {
+      emailCopied: string
+      copyFailed: string
+      inspectOn: string
+      inspectOff: string
+    }
   }
   liveBuild: {
     description: string

@@ -3,9 +3,13 @@ import MagneticButton from 'components/MagneticButton'
 import type { Translations } from 'locales'
 import S from './styles.module.css'
 
-type Props = { t: Translations['contact']; copiedMessage: string }
+type Props = {
+  t: Translations['contact']
+  copiedMessage: string
+  failedMessage: string
+}
 
-export default function Contact({ t, copiedMessage }: Props) {
+export default function Contact({ t, copiedMessage, failedMessage }: Props) {
   return (
     <section id="contact" className={S.contact} data-component="<Contact />">
       <p className={S.label}>{t.label}</p>
@@ -22,6 +26,7 @@ export default function Contact({ t, copiedMessage }: Props) {
           email={t.email}
           label={t.copyEmail}
           copiedMessage={copiedMessage}
+          failedMessage={failedMessage}
         />
       </div>
       <ul className={S.socials}>

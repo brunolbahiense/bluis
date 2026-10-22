@@ -60,6 +60,10 @@ export default async function HomePage({
           <Contact
             t={translations.contact}
             copiedMessage={translations.spotlight.toasts.emailCopied}
+            failedMessage={translations.spotlight.toasts.copyFailed.replace(
+              '{email}',
+              translations.contact.email
+            )}
           />
         </main>
         <Footer
