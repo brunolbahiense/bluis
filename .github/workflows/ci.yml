@@ -22,7 +22,7 @@ jobs:
       # yarn test roda os unitários pra falhar rápido; yarn build os roda de novo via
       # prebuild (scripts/build-info.mjs), que grava os números reais em build-info.json.
       - run: yarn build
-      - run: yarn playwright install --with-deps chromium
+      - run: yarn playwright install --with-deps chromium webkit firefox
       - run: yarn test:e2e
 
       - uses: actions/upload-artifact@v4

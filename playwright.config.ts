@@ -23,6 +23,18 @@ export default defineConfig({
         hasTouch: true
       },
       testMatch: /layout\.spec\.ts/
+    },
+    // Layout depende do motor de renderização: confere o Spotlight e a página também
+    // no WebKit (Safari) e no Firefox.
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+      testMatch: /(spotlight-layout|layout)\.spec\.ts/
+    },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+      testMatch: /(spotlight-layout|layout)\.spec\.ts/
     }
   ],
   // Roda contra o build de produção: faça `yarn build` antes.
