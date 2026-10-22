@@ -41,7 +41,7 @@ Recrutadores/empresas **e** potenciais clientes: portfólio pessoal com CTA de c
 | Fontes | `next/font/google`: Fraunces (títulos), Inter (texto), JetBrains Mono (rótulos/teclas) |
 | Lint/format | ESLint 9 (flat config, `eslint-config-next`) + Prettier 3 (`.prettierrc` atual) |
 | Testes | Vitest (unidade) + Playwright (e2e) |
-| Runtime | Node.js >= 20 (`engines` + `.nvmrc` com `22`), Yarn 1 |
+| Runtime | Node.js >= 22.12 (exigência do Vitest 5; `engines` + `.nvmrc` com `22`), Yarn 1 |
 
 Next 16: o padrão pede "15+"; 16 é o `latest`. O scaffold do Next 16.4 vem com `cacheComponents` e `partialPrefetching` ligados — o plano de implementação deve consultar `node_modules/next/dist/docs/` (aviso do próprio `AGENTS.md` do Next) antes de usar APIs de rota, proxy e metadata.
 
@@ -52,8 +52,8 @@ Por que CSS Modules: styled-components está em modo de manutenção e obriga `'
 - **Wordmark:** "Bruno **Bahiense**" em Fraunces, sobrenome em vermelho. **Favicon:** os triângulos atuais (`logo.svg`).
 - **Tokens (`styles/tokens.css`):**
   - `--color-cream` `#fefaec` (fundo) · `--color-surface` `#fffdf6` (cards) · `--color-hover` `#f5efdc`
-  - `--color-ink` `#24242c` (texto, botões primários) · `--color-muted` `#6b6a66` · `--color-faint` `#9c998f` · `--color-line` `#e6dec6`
-  - `--color-accent` `#e15638` (vermelho) · `--color-highlight` `#71c492` (verde, estados ok) · `--color-amber` `#c9962b` (estado "em evolução")
+  - `--color-ink` `#24242c` (texto, botões primários) · `--color-muted` `#6b6a66` · `--color-faint` `#75726a` (ajustado para AA) · `--color-line` `#e6dec6`
+  - `--color-accent` `#e15638` (vermelho; títulos grandes e decoração) · `--color-accent-text` `#b8432a` (vermelho para texto pequeno, AA) · `--color-highlight` `#71c492` (verde, estados ok) · `--color-amber` `#c9962b` (estado "em evolução")
   - Temas do LiveBuild: coral `#e15638`, tinta `#3b3fb6`, menta `#2f9e6b`, âmbar `#c9962b` (cada um com uma versão `-soft`)
 - **Tipografia:** títulos em Fraunces 300 (hero) e 500 (seções e números), corpo em Inter, rótulos `// assim` e teclas em JetBrains Mono.
 - **Squircle em tudo:** três raios (`--radius-sm/md/lg`) aplicados com `corner-shape: squircle` dentro de `@supports`, com `border-radius` comum como fallback. Nada de cantos retos em cards, botões, inputs, chips, teclas, toasts ou painéis.
