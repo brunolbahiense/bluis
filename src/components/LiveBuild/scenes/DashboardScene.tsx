@@ -16,12 +16,7 @@ export default function DashboardScene({
   return (
     <>
       <AppHeader title={dashboard.title} />
-      <Piece
-        name="<KpiCard />"
-        order={1}
-        depth={30}
-        className={`${S.card} ${S.metricCard}`}
-      >
+      <Piece name="<KpiCard />" order={1} depth={30} className={S.card}>
         <span className={S.cardLabel}>{dashboard.kpiLabel}</span>
         <b className={S.kpi}>
           <CountUp

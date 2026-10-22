@@ -96,6 +96,21 @@
   transform-style: preserve-3d;
 }
 
+/*
+ * A peça de conteúdo (a 2ª do stage em toda cena: AppHeader, conteúdo,
+ * botão) cresce para preencher o espaço do painel, em vez de deixar um vão
+ * grande antes do botão (.ctaPiece fica com margin-top fixo, ver abaixo).
+ * Uniforme nas 5 cenas, sem precisar de classe extra por cena: tabela,
+ * fluxo e chat ficam alinhados no topo dentro do espaço que sobra; KPI e
+ * oferta usam .chart/.steps com flex: 1 para também esticar e preencher.
+ */
+.stage > .piece:nth-child(2) {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+
 /* Peças: entram em mola na montagem (@starting-style), em sequência por --order */
 .piece {
   position: relative;
@@ -200,20 +215,6 @@
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   background: var(--color-cream);
-}
-
-/*
- * KpiCard (dashboard) e OfferCard (acordos) são as únicas cenas que usam
- * .card sozinho, sem .table/.flow/.chat: sem essa regra ficam bem mais
- * baixas que as outras e sobra um vão grande antes do botão (.ctaPiece tem
- * margin-top: auto). Cresce mais que o min-height base e vira coluna flex
- * para o preenchimento (.chart/.steps) esticar e ocupar o espaço, em vez de
- * deixar vazio dentro do próprio card.
- */
-.metricCard {
-  display: flex;
-  flex-direction: column;
-  min-height: 12.75rem;
 }
 
 .cardLabel {
@@ -329,7 +330,7 @@
 }
 
 .flow {
-  height: 9rem;
+  min-height: 9rem;
 }
 
 .flow svg {
@@ -396,7 +397,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
-  height: 9rem;
+  min-height: 9rem;
 }
 
 .message {
@@ -525,8 +526,9 @@
   background: var(--scene);
 }
 
+/* .stage já aplica gap: 0.7rem entre peças; soma 0.3rem para fechar ~1rem antes do botão. */
 .ctaPiece {
-  margin-top: auto;
+  margin-top: 0.3rem;
 }
 
 .cta {
@@ -620,10 +622,5 @@
 
   .panel {
     height: 22rem;
-  }
-
-  /* O painel é 2rem mais baixo aqui: acompanha para manter o mesmo vão antes do botão. */
-  .metricCard {
-    min-height: 10.75rem;
   }
 }
