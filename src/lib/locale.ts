@@ -31,7 +31,7 @@ function parseAcceptLanguage(header: string) {
     .map((part, position) => {
       const [tag, ...parameters] = part.trim().split(';')
       const qualityParameter = parameters.find((parameter) =>
-        parameter.trim().startsWith('q=')
+        parameter.trim().toLowerCase().startsWith('q=')
       )
       const quality = qualityParameter
         ? Number(qualityParameter.trim().slice(2))

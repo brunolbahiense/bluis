@@ -48,6 +48,14 @@ describe('chooseLocale', () => {
     expect(chooseLocale({})).toBe('pt')
     expect(chooseLocale({ acceptLanguage: '' })).toBe('pt')
   })
+
+  it('ignora idiomas com q=0', () => {
+    expect(chooseLocale({ acceptLanguage: 'pt;q=0,en;q=0.5' })).toBe('en')
+  })
+
+  it('aceita Q maiúsculo', () => {
+    expect(chooseLocale({ acceptLanguage: 'en;Q=0.1,pt;Q=0.9' })).toBe('pt')
+  })
 })
 
 describe('otherLocale', () => {
