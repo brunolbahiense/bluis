@@ -1,0 +1,57 @@
+.metrics {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.25rem 1.25rem 1.1rem;
+}
+
+.state {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.state::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-highlight);
+}
+
+.state[data-tone='progress']::before {
+  background: var(--color-amber);
+}
+
+.value {
+  margin-top: 0.75rem;
+  font: 500 2.2rem / 1.05 var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+.description {
+  margin-bottom: 0.75rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.note {
+  margin-top: 0.6rem;
+  color: var(--color-faint);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 48rem) {
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+}

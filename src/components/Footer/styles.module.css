@@ -1,0 +1,21 @@
+.footer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  max-width: var(--width-page);
+  margin: 0 auto;
+  padding: 1.5rem var(--space-page) 2.5rem;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.version {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.inspect {
+  margin-left: auto;
+}
