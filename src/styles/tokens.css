@@ -40,6 +40,9 @@
 
   --shadow-soft: 0 18px 40px -28px rgba(36, 36, 44, 0.4);
   --shadow-float: 0 30px 60px -30px rgba(36, 36, 44, 0.45);
+  --shadow-subtle: 0 8px 24px -16px rgba(36, 36, 44, 0.35);
+
+  --color-backdrop: rgba(36, 36, 44, 0.28);
 
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);

@@ -103,7 +103,12 @@ function SpotlightSession({ t, projects, experience, contact, locale }: Props) {
         close()
         return
       case 'switchLanguage':
-        window.location.assign(`/${otherLocale(locale)}${window.location.hash}`)
+        window.location.assign(
+          new URL(
+            `/${otherLocale(locale)}${window.location.hash}`,
+            window.location.origin
+          )
+        )
         return
       case 'toggleInspector':
         notify(isInspecting ? t.toasts.inspectOff : t.toasts.inspectOn)
@@ -145,7 +150,7 @@ function SpotlightSession({ t, projects, experience, contact, locale }: Props) {
           className={S.input}
           role="combobox"
           aria-expanded={!question}
-          aria-controls={resultsListId}
+          aria-controls={question ? undefined : resultsListId}
           aria-autocomplete="list"
           aria-activedescendant={question ? undefined : optionId(selectedIndex)}
           placeholder={t.placeholder}
