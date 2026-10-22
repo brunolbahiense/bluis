@@ -16,6 +16,9 @@ test.describe('com animações reduzidas', () => {
 })
 
 test('LiveBuild troca de cena ao clicar', async ({ page }) => {
+  // Congela o relógio antes de navegar: o temporizador interno que avança as cenas
+  // sozinho não dispara, então só o clique muda a cena (teste determinístico).
+  await page.clock.install()
   await page.goto('/pt')
   const panel = page.locator('[data-live-build]')
   await expect(panel).toHaveAttribute('data-theme', 'coral')

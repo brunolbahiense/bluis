@@ -14,6 +14,12 @@ test('modo Inspecionar mostra componentes e saúde real do build', async ({
   await expect(panel).toContainText('v2.0.0')
   await expect(panel).toContainText(/\d+\/\d+ passaram/)
 
+  const header = page.locator('[data-component="<Header />"]')
+  const headerLabel = await header.evaluate(
+    (element) => getComputedStyle(element, '::after').content
+  )
+  expect(headerLabel).toContain('<Header />')
+
   await panel.getByRole('button', { name: 'Fechar' }).click()
   await expect(page.locator('html')).not.toHaveAttribute('data-inspecting', '')
 })
