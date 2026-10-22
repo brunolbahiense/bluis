@@ -42,7 +42,7 @@ test.describe('idioma por rota', () => {
 
   test('o seletor troca para o outro idioma', async ({ page }) => {
     await page.goto('/pt')
-    await page.getByRole('link', { name: 'View in English' }).click()
+    await page.getByRole('link', { name: /View in English/ }).click()
     await expect(page).toHaveURL(/\/en$/)
   })
 })

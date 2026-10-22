@@ -32,7 +32,7 @@ export default function Header({ t, brand, locale }: Props) {
       <LanguageSwitcher
         locale={locale}
         label={t.switchLanguage}
-        ariaLabel={t.switchLanguageLabel}
+        fullLabel={t.switchLanguageLabel}
       />
     </header>
   )

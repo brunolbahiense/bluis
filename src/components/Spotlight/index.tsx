@@ -154,6 +154,7 @@ function SpotlightSession({ t, projects, experience, contact, locale }: Props) {
           ref={inputRef}
           className={S.input}
           role="combobox"
+          aria-label={t.dialogLabel}
           aria-expanded={!question}
           aria-controls={question ? undefined : resultsListId}
           aria-autocomplete="list"
