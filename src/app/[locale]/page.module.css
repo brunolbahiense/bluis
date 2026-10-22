@@ -1,0 +1,7 @@
+.main {
+  display: grid;
+  gap: clamp(3.5rem, 8vw, 5.5rem);
+  max-width: var(--width-page);
+  margin: 0 auto;
+  padding: 0 var(--space-page) 3rem;
+}

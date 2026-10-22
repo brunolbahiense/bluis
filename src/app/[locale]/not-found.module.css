@@ -1,0 +1,27 @@
+.notFound {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 18vh var(--space-page) 4rem;
+}
+
+.block {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.title {
+  font: 300 clamp(2rem, 5vw, 2.8rem) / 1.05 var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+.body {
+  color: var(--color-muted);
+}
+
+.link {
+  width: fit-content;
+  color: var(--color-accent-text);
+  font-weight: 500;
+}
