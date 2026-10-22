@@ -1,0 +1,55 @@
+/*
+ * Tokens do design system.
+ * Breakpoint único do site: 48rem (custom properties não funcionam dentro de media query).
+ * Texto pequeno em vermelho usa --color-accent-text (contraste AA); --color-accent fica para
+ * títulos grandes e elementos decorativos.
+ */
+:root {
+  --color-cream: #fefaec;
+  --color-surface: #fffdf6;
+  --color-hover: #f5efdc;
+  --color-ink: #24242c;
+  --color-muted: #6b6a66;
+  --color-faint: #75726a;
+  --color-line: #e6dec6;
+  --color-accent: #e15638;
+  --color-accent-text: #b8432a;
+  --color-highlight: #71c492;
+  --color-amber: #c9962b;
+
+  --theme-coral: #e15638;
+  --theme-coral-soft: #fbe3dc;
+  --theme-ink: #3b3fb6;
+  --theme-ink-soft: #e1e2f7;
+  --theme-mint: #2f9e6b;
+  --theme-mint-soft: #dcf2e6;
+  --theme-amber: #c9962b;
+  --theme-amber-soft: #f6ecd3;
+
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  --space-page: clamp(1rem, 4vw, 2.5rem);
+  --width-page: 72rem;
+
+  --shadow-soft: 0 18px 40px -28px rgba(36, 36, 44, 0.4);
+  --shadow-float: 0 30px 60px -30px rgba(36, 36, 44, 0.45);
+
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Squircle: com corner-shape o raio precisa ser maior para a curva parecer igual. */
+@supports (corner-shape: squircle) {
+  :root {
+    --radius-sm: 14px;
+    --radius-md: 26px;
+    --radius-lg: 40px;
+  }
+}

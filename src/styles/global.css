@@ -1,0 +1,130 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@supports (corner-shape: squircle) {
+  *,
+  *::before,
+  *::after {
+    corner-shape: squircle;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--theme-coral-soft);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Ripple criado por hooks/useRipple dentro de qualquer elemento com overflow: hidden */
+.ripple {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border: 1.5px solid currentColor;
+  border-radius: 6px;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: ripple 0.55s ease-out forwards;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+/* Modo Inspecionar: atributo no <html> ligado pelo InspectorProvider */
+html[data-inspecting] [data-component] {
+  outline: 1px dashed var(--color-accent);
+  outline-offset: 3px;
+}
+
+html[data-inspecting] [data-component]::after {
+  content: attr(data-component);
+  position: absolute;
+  top: -18px;
+  left: 0;
+  z-index: 20;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--color-accent-text);
+  color: #fff;
+  font: 500 10px/1.5 var(--font-mono);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+html[data-inspecting] [data-component][data-inspect-hover] {
+  outline-style: solid;
+  background-color: rgba(225, 86, 56, 0.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
