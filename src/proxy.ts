@@ -13,7 +13,8 @@ export function proxy(request: NextRequest) {
       response.cookies.set(localeCookie, pathLocale, {
         path: '/',
         maxAge: oneYearInSeconds,
-        sameSite: 'lax'
+        sameSite: 'lax',
+        httpOnly: true
       })
     }
     return response

@@ -1,10 +1,14 @@
 import { ImageResponse } from 'next/og'
-import { isLocale } from 'lib/locale'
+import { isLocale, locales } from 'lib/locale'
 import { getTranslations } from 'locales'
 
 export const alt = 'Bruno Bahiense — Senior Software Engineer'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
+}
 
 // ImageResponse não lê CSS custom properties: as cores repetem os tokens de styles/tokens.css.
 const colors = {
