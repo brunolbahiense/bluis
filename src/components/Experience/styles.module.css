@@ -36,7 +36,7 @@
 
 @media (max-width: 48rem) {
   .item {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0.35rem;
   }
 }

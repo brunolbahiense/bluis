@@ -8,6 +8,17 @@ test('sem rolagem horizontal', async ({ page }) => {
   expect(overflow).toBeLessThanOrEqual(0)
 })
 
+for (const locale of ['pt', 'en'] as const) {
+  test(`sem rolagem horizontal em 320px (${locale})`, async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 640 })
+    await page.goto(`/${locale}`)
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - window.innerWidth
+    )
+    expect(overflow).toBeLessThanOrEqual(0)
+  })
+}
+
 test('hero empilha em uma coluna no mobile', async ({ page }) => {
   const viewport = page.viewportSize()
   test.skip(
